@@ -1,0 +1,729 @@
+{
+	"info": {
+		"_postman_id": "35ec2b85-d7c4-4c0f-86bf-104987c72442",
+		"name": "AutomationExercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25906709"
+	},
+	"item": [
+		{
+			"name": "API 1: Get All Products List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"responseCode\", \"products\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{apiUrl}}/productsList"
+			},
+			"response": []
+		},
+		{
+			"name": "API 2: POST To All Products List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"responseCode\", \"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"responseCode\": 405, \"message\": \"This request method is not supported.\"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{apiUrl}}/productsList"
+			},
+			"response": []
+		},
+		{
+			"name": "API 3: Get All Brands List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"responseCode\", \"brands\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{apiUrl}}/brandsList"
+			},
+			"response": []
+		},
+		{
+			"name": "API 4: PUT To All Brands List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"responseCode\", \"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"responseCode\": 405, \"message\": \"This request method is not supported.\"});\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"brand\": \"polos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiUrl}}/brandsList",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"brandsList"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "brand",
+							"value": "polo",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 5: POST To Search Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Searched products\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"Searched products List\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/searchProduct?search_product=jean",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"searchProduct"
+					],
+					"query": [
+						{
+							"key": "search_product",
+							"value": "jean"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 6: POST To Search Product without search_product parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"responseCode\", \"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"responseCode\": 400, \"message\": \"Bad request, search_product parameter is missing in POST request.\"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/searchProduct",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"searchProduct"
+					],
+					"query": [
+						{
+							"key": "search_product ",
+							"value": "top",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 7: POST To Verify Login with valid details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"responseCode\", \"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"responseCode\": 200, \"message\": \"User exists!\"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/verifyLogin?email=tom1@gmail.com&password=12345",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"verifyLogin"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "tom1@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 8: POST To Verify Login without email parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"responseCode\", \"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"responseCode\": 400, \"message\": \"Bad request, email or password parameter is missing in POST request.\"});\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/verifyLogin?password=12345",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"verifyLogin"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "12345"
+						},
+						{
+							"key": "email",
+							"value": "tom1@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 9: DELETE To Verify Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"responseCode\", \"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"responseCode\": 405, \"message\": \"This request method is not supported.\"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{apiUrl}}/verifyLogin"
+			},
+			"response": []
+		},
+		{
+			"name": "API 10: POST To Verify Login with invalid details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"responseCode\": 404, \"message\": \"User not found!\"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/verifyLogin?email=tom1@gmail&password =12345",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"verifyLogin"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "tom1@gmail"
+						},
+						{
+							"key": "password ",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 11: POST To Create/Register User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"message\": \"User created!\"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/createAccount?name=tom&email=tom@gmail.com&password=12345&title =Mr&birth_date=01&birth_month=02&birth_year=1997&firstname=Tom&lastname=Cruse&company=abc&address1=xyz&address2=123&country=USA&zipcode=1212&state=NY&city=NY&mobile_number=01923456781",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"createAccount"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "tom"
+						},
+						{
+							"key": "email",
+							"value": "tom@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "12345"
+						},
+						{
+							"key": "title ",
+							"value": "Mr"
+						},
+						{
+							"key": "birth_date",
+							"value": "01"
+						},
+						{
+							"key": "birth_month",
+							"value": "02"
+						},
+						{
+							"key": "birth_year",
+							"value": "1997"
+						},
+						{
+							"key": "firstname",
+							"value": "Tom"
+						},
+						{
+							"key": "lastname",
+							"value": "Cruse"
+						},
+						{
+							"key": "company",
+							"value": "abc"
+						},
+						{
+							"key": "address1",
+							"value": "xyz"
+						},
+						{
+							"key": "address2",
+							"value": "123"
+						},
+						{
+							"key": "country",
+							"value": "USA"
+						},
+						{
+							"key": "zipcode",
+							"value": "1212"
+						},
+						{
+							"key": "state",
+							"value": "NY"
+						},
+						{
+							"key": "city",
+							"value": "NY"
+						},
+						{
+							"key": "mobile_number",
+							"value": "01923456781"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 12: DELETE METHOD To Delete User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"message\": \"Account deleted!\"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/deleteAccount?email=tom1@gmail.com&password=12345",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"deleteAccount"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "tom1@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 13: PUT METHOD To Update User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\"message\": \"User updated!\"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/updateAccount?name=tom2&email=tom2@gmail.com&password=12345&title =Mr&birth_date=01&birth_month=02&birth_year=1997&firstname=Tom&lastname=Cruse&company=abc&address1=xyz&address2=123&country=USA&zipcode=1212&state=NY&city=NY&mobile_number=01923456781",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"updateAccount"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "tom2"
+						},
+						{
+							"key": "email",
+							"value": "tom2@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "12345"
+						},
+						{
+							"key": "title ",
+							"value": "Mr"
+						},
+						{
+							"key": "birth_date",
+							"value": "01"
+						},
+						{
+							"key": "birth_month",
+							"value": "02"
+						},
+						{
+							"key": "birth_year",
+							"value": "1997"
+						},
+						{
+							"key": "firstname",
+							"value": "Tom"
+						},
+						{
+							"key": "lastname",
+							"value": "Cruse"
+						},
+						{
+							"key": "company",
+							"value": "abc"
+						},
+						{
+							"key": "address1",
+							"value": "xyz"
+						},
+						{
+							"key": "address2",
+							"value": "123"
+						},
+						{
+							"key": "country",
+							"value": "USA"
+						},
+						{
+							"key": "zipcode",
+							"value": "1212"
+						},
+						{
+							"key": "state",
+							"value": "NY"
+						},
+						{
+							"key": "city",
+							"value": "NY"
+						},
+						{
+							"key": "mobile_number",
+							"value": "01923456781"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 14: GET user account detail by email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"user\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/getUserDetailByEmail?email=fahim@gmail.com",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"getUserDetailByEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "fahim@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "https://automationexercise.com/api",
+			"type": "string"
+		}
+	]
+}

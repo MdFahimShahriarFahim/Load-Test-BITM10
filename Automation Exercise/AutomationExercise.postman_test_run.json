@@ -1,0 +1,576 @@
+{
+	"id": "b5c7825d-5a71-46a5-9447-06947a8378f1",
+	"name": "AutomationExercise",
+	"timestamp": "2023-03-20T15:15:55.928Z",
+	"collection_id": "25906709-35ec2b85-d7c4-4c0f-86bf-104987c72442",
+	"folder_id": 0,
+	"environment_id": "25906709-7c8fa096-ca41-4abc-9842-ca7307986941",
+	"totalPass": 25,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-03-20T15:15:48.798Z",
+	"totalFail": 9,
+	"results": [
+		{
+			"id": "bf508aa4-31fe-467a-8a81-55df1e690216",
+			"name": "API 1: Get All Products List",
+			"url": "https://automationexercise.com/api/productsList",
+			"time": 1075,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1075
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "c4ff68ec-cccb-4e0b-ba5d-f3eefc273881",
+			"name": "API 2: POST To All Products List",
+			"url": "https://automationexercise.com/api/productsList",
+			"time": 272,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"Body is correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				272
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"Body is correct": true
+				}
+			]
+		},
+		{
+			"id": "dc7b7e78-a6c4-429d-88c4-fe1831b689c7",
+			"name": "API 3: Get All Brands List",
+			"url": "https://automationexercise.com/api/brandsList",
+			"time": 265,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				265
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "7bb73686-2f3f-4af7-8b69-333691ba5bdd",
+			"name": "API 4: PUT To All Brands List",
+			"url": "https://automationexercise.com/api/brandsList",
+			"time": 266,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"Body is correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				266
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"Body is correct": true
+				}
+			]
+		},
+		{
+			"id": "027e2c0b-c01b-4455-9458-c7bfef9d6738",
+			"name": "API 5: POST To Search Product",
+			"url": "https://automationexercise.com/api/searchProduct?search_product=jean",
+			"time": 268,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": false,
+				"Body is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Body is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				268
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": false,
+					"Body is correct": false
+				}
+			]
+		},
+		{
+			"id": "1e8cd4e6-81b9-4b11-b4ad-66d575392135",
+			"name": "API 6: POST To Search Product without search_product parameter",
+			"url": "https://automationexercise.com/api/searchProduct",
+			"time": 444,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches string": true,
+				"Body is correct": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				444
+			],
+			"allTests": [
+				{
+					"Body matches string": true,
+					"Body is correct": true
+				}
+			]
+		},
+		{
+			"id": "70908c66-70c5-4e3c-8b96-3ee39dfa2937",
+			"name": "API 7: POST To Verify Login with valid details",
+			"url": "https://automationexercise.com/api/verifyLogin?email=tom1@gmail.com&password=12345",
+			"time": 266,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches string": true,
+				"Body is correct": false
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				266
+			],
+			"allTests": [
+				{
+					"Body matches string": true,
+					"Body is correct": false
+				}
+			]
+		},
+		{
+			"id": "15e73030-c7c9-489c-bb49-8e5a9e907eb3",
+			"name": "API 8: POST To Verify Login without email parameter",
+			"url": "https://automationexercise.com/api/verifyLogin?password=12345",
+			"time": 266,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches string": true,
+				"Body is correct": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				266
+			],
+			"allTests": [
+				{
+					"Body matches string": true,
+					"Body is correct": true
+				}
+			]
+		},
+		{
+			"id": "2a921195-77b5-460e-96cb-475119fb6a9a",
+			"name": "API 9: DELETE To Verify Login",
+			"url": "https://automationexercise.com/api/verifyLogin",
+			"time": 259,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches string": true,
+				"Body is correct": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				259
+			],
+			"allTests": [
+				{
+					"Body matches string": true,
+					"Body is correct": true
+				}
+			]
+		},
+		{
+			"id": "317af83c-9fe5-4adc-897e-516c1abad242",
+			"name": "API 10: POST To Verify Login with invalid details",
+			"url": "https://automationexercise.com/api/verifyLogin?email=tom1@gmail&password =12345",
+			"time": 269,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches string": true,
+				"Body is correct": false
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				269
+			],
+			"allTests": [
+				{
+					"Body matches string": true,
+					"Body is correct": false
+				}
+			]
+		},
+		{
+			"id": "c44ac82b-d24f-4752-b35e-52a22f0f4f4a",
+			"name": "API 11: POST To Create/Register User Account",
+			"url": "https://automationexercise.com/api/createAccount?name=tom&email=tom@gmail.com&password=12345&title =Mr&birth_date=01&birth_month=02&birth_year=1997&firstname=Tom&lastname=Cruse&company=abc&address1=xyz&address2=123&country=USA&zipcode=1212&state=NY&city=NY&mobile_number=01923456781",
+			"time": 272,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 201": false,
+				"Body matches string": true,
+				"Body is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				272
+			],
+			"allTests": [
+				{
+					"Status code is 201": false,
+					"Body matches string": true,
+					"Body is correct": false
+				}
+			]
+		},
+		{
+			"id": "2e204752-693c-401a-84aa-f55b36415a94",
+			"name": "API 12: DELETE METHOD To Delete User Account",
+			"url": "https://automationexercise.com/api/deleteAccount?email=tom1@gmail.com&password=12345",
+			"time": 266,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false,
+				"Body matches string": true,
+				"Body is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				266
+			],
+			"allTests": [
+				{
+					"Status code is 400": false,
+					"Body matches string": true,
+					"Body is correct": false
+				}
+			]
+		},
+		{
+			"id": "c0c6a18f-4038-40ce-83da-b9408f0e4e84",
+			"name": "API 13: PUT METHOD To Update User Account",
+			"url": "https://automationexercise.com/api/updateAccount?name=tom2&email=tom2@gmail.com&password=12345&title =Mr&birth_date=01&birth_month=02&birth_year=1997&firstname=Tom&lastname=Cruse&company=abc&address1=xyz&address2=123&country=USA&zipcode=1212&state=NY&city=NY&mobile_number=01923456781",
+			"time": 292,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"Body is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				292
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"Body is correct": false
+				}
+			]
+		},
+		{
+			"id": "f2743ccb-607f-464b-8e67-75017b3a87ae",
+			"name": "API 14: GET user account detail by email",
+			"url": "https://automationexercise.com/api/getUserDetailByEmail?email=fahim@gmail.com",
+			"time": 266,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				266
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4746,
+	"collection": {
+		"requests": [
+			{
+				"id": "bf508aa4-31fe-467a-8a81-55df1e690216",
+				"method": "GET"
+			},
+			{
+				"id": "c4ff68ec-cccb-4e0b-ba5d-f3eefc273881",
+				"method": "POST"
+			},
+			{
+				"id": "dc7b7e78-a6c4-429d-88c4-fe1831b689c7",
+				"method": "GET"
+			},
+			{
+				"id": "7bb73686-2f3f-4af7-8b69-333691ba5bdd",
+				"method": "PUT"
+			},
+			{
+				"id": "027e2c0b-c01b-4455-9458-c7bfef9d6738",
+				"method": "POST"
+			},
+			{
+				"id": "1e8cd4e6-81b9-4b11-b4ad-66d575392135",
+				"method": "POST"
+			},
+			{
+				"id": "70908c66-70c5-4e3c-8b96-3ee39dfa2937",
+				"method": "POST"
+			},
+			{
+				"id": "15e73030-c7c9-489c-bb49-8e5a9e907eb3",
+				"method": "POST"
+			},
+			{
+				"id": "2a921195-77b5-460e-96cb-475119fb6a9a",
+				"method": "DELETE"
+			},
+			{
+				"id": "317af83c-9fe5-4adc-897e-516c1abad242",
+				"method": "POST"
+			},
+			{
+				"id": "c44ac82b-d24f-4752-b35e-52a22f0f4f4a",
+				"method": "POST"
+			},
+			{
+				"id": "2e204752-693c-401a-84aa-f55b36415a94",
+				"method": "DELETE"
+			},
+			{
+				"id": "c0c6a18f-4038-40ce-83da-b9408f0e4e84",
+				"method": "PUT"
+			},
+			{
+				"id": "f2743ccb-607f-464b-8e67-75017b3a87ae",
+				"method": "GET"
+			}
+		]
+	}
+}

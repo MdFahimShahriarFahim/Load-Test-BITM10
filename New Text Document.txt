@@ -1,0 +1,23 @@
+=> Opencart-Demo (Website Load Testing)
+
+Threads(User): 10 | Ramp-up period(Sec): 1 | Avg Time(ms): 1988
+Threads(User): 100 | Ramp-up period(Sec): 10 | Avg Time(ms): 691
+Threads(User): 1000 | Ramp-up period(Sec): 10 | Avg Time(ms): 15296
+Threads(User): 500| Ramp-up period(Sec): 10 | Avg Time(ms): 10148
+Threads(User): 5000| Ramp-up period(Sec): 10 | Avg Time(ms): 
+
+=> Sauce-Demo (Website Load Testing)
+
+Threads(User): 10 | Ramp-up period(Sec): 1 | Avg Time(ms): 936
+Threads(User): 100 | Ramp-up period(Sec): 10 | Avg Time(ms): 633
+Threads(User): 500| Ramp-up period(Sec): 10 | Avg Time(ms): 
+Threads(User): 1000| Ramp-up period(Sec): 10 | Avg Time(ms): 23836
+Threads(User): 5000| Ramp-up period(Sec): 10 | Avg Time(ms): 
+
+=> Reqres API POST(API Load Testing)
+
+Threads(User): 10 | Ramp-up period(Sec): 1 | Avg Time(ms): 672
+Threads(User): 100 | Ramp-up period(Sec): 10 | Avg Time(ms): 575
+Threads(User): 500| Ramp-up period(Sec): 10 | Avg Time(ms): 597
+Threads(User): 1000| Ramp-up period(Sec): 10 | Avg Time(ms): 7993
+Threads(User): 5000| Ramp-up period(Sec): 10 | Avg Time(ms): 
